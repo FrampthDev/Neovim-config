@@ -20,6 +20,19 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+    vim.diagnostic.config({
+  virtual_text = {
+    -- source = "always",  -- Or "if_many"
+    prefix = '●', -- Could be '■', '▎', 'x'
+  },
+  severity_sort = true,
+  float = {
+    source = "always",  -- Or "if_many"
+  },
+})
+})
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -45,8 +58,6 @@ vim.o.smarttab = true
 
 vim.wo.relativenumber = true
 
--- Mini
-require('mini.completion').setup()
 
 -- Treesitter
 
